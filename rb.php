@@ -9,3 +9,10 @@ $data = $_POST["data"];
 $decoded = pack('H*', $data);
  
 echo "OK";
+
+$myfile = fopen(“rockblock-data.txt”, “a”) or die(“Unable to open file!”);
+fwrite($myfile, $transmit_time);
+fwrite($myfile, ” “);
+fwrite($myfile, $data);
+fwrite($myfile, “\n”);
+fclose($myfile);
